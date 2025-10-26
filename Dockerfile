@@ -21,12 +21,9 @@
     WORKDIR /app
     
     # Copiar el entorno virtual
-    COPY --from=builder /root/.local/share/pypoetry/virtualenvs /root/.local/share/pypoetry/virtualenvs
-    
-    # Configurar el entorno virtual
-    ENV POETRY_VIRTUALENVS_IN_PROJECT=false
-    ENV POETRY_VIRTUALENVS_PATH=/root/.local/share/pypoetry/virtualenvs
-    
+    COPY --from=builder /app/.venv /app/.venv
+    ENV PATH="/app/.venv/bin:$PATH"
+    ENV POETRY_VIRTUALENVS_IN_PROJECT=true
     # Copiar el resto del código
     # NOTA: Si tienes una carpeta 'src' con otros módulos, asegúrate de copiarla también
     COPY . .
