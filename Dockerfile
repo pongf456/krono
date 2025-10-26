@@ -30,5 +30,5 @@
     
     # Comando de ejecución CORREGIDO
     # El script ahora se ejecuta como un archivo independiente en la raíz:
-    CMD ["poetry", "run", "python", "main.py"] 
+    CMD ["python", "main.py"] 
     # Si el ejecutable estuviera en /src/main.py sería "python", "src/main.py"
