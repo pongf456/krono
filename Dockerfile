@@ -11,7 +11,7 @@
     
     # Copiar archivos de configuración
     COPY pyproject.toml poetry.lock ./
-    
+    ENV POETRY_VIRTUALENVS_IN_PROJECT=true
     # Instalar dependencias
     RUN poetry install --only main --no-root
     
