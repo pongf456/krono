@@ -1,0 +1,13 @@
+from typing import Protocol, TypedDict
+
+
+class Client(TypedDict):
+    name: str
+    identifier: int
+
+
+class Database(Protocol):
+    async def store(self, client: Client): ...
+    async def get(self, identifier: int) -> Client | None: ...
+    async def all(self) -> list[Client]: ...
+    async def delete(self, identifier: int) -> Client | None: ...
