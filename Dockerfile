@@ -13,7 +13,7 @@
     COPY pyproject.toml poetry.lock ./
     
     # Instalar dependencias
-    RUN poetry install --no-dev --no-root
+    RUN poetry install --only main --no-root
     
     # --- STAGE 2: Runtime Image ---
     FROM python:3.11-slim-buster as runtime
