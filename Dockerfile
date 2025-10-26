@@ -5,8 +5,8 @@
     
     # Instalar Poetry
     RUN pip install pipx && \
-        pipx install poetry==$(poetry --version | cut -d' ' -f2) && \
-        pipx ensurepath
+    pipx install poetry && \
+    pipx ensurepath
     ENV PATH="/root/.local/bin:$PATH"
     
     # Copiar archivos de configuración
