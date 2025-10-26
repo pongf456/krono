@@ -1,5 +1,5 @@
 # --- STAGE 1: Build Image ---
-    FROM python:3.11-slim-buster as builder
+    FROM python:3.14-slim-bookworm as builder
 
     WORKDIR /app
     
@@ -16,7 +16,7 @@
     RUN poetry install --only main --no-root
     
     # --- STAGE 2: Runtime Image ---
-    FROM python:3.11-slim-buster as runtime
+    FROM python:3.14-slim-bookworm as runtime
     
     WORKDIR /app
     
